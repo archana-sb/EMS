@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Angular Workshop",
+      "description": "A comprehensive workshop on Angular.",
+      "date": "2025-02-15",
+      "location": "New York, NY"
+    },
+    {
+      "id": 2,
+      "title": "React Training",
+      "description": "Learn the basics of React.",
+      "date": "2025-02-20",
+      "location": "Los Angeles, CA"
+    },
+    {
+      "id": 3,
+      "title": "Angular Workshop",
+      "description": "A comprehensive workshop on Angular.",
+      "date": "2025-02-15",
+      "location": "New York, NY"
+    },
+    {
+      "id": 4,
+      "title": "React Training",
+      "description": "Learn the basics of React.",
+      "date": "2025-02-20",
+      "location": "Los Angeles, CA"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "test1@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "email": "test2@example.com",
+      "password": "123456"
+    }
+  ]
+}
