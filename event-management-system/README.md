@@ -16,7 +16,7 @@ EMS is a single-page application(SPA) for managing events.This applications allo
 
 Clone the repository : https://github.com/archana-sb/Event.git
 Navigate to the project directory : cd event-management-system
-Install the dependencies : npm install
+Install the dependencies : npm install, npm install -g json-server
 Start the development server : ng serve
 Start the JSON server: json-server --watch db.json
 Open your browser and navigate to `http://localhost:4200/`
