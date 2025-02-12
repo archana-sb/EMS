@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { catchError, filter, Observable, of, tap, throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthServiceService {
-  private readonly apiUrl = 'http://localhost:3000/users'; // JSON Server URL
+  private readonly apiUrl = environment.apiUsersUrl; // JSON Server URL
 
   constructor(
     private readonly http: HttpClient,

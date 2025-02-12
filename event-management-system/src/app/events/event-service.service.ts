@@ -4,12 +4,13 @@ import { catchError, map, Observable, of, retry, tap } from 'rxjs';
 import { Event, EventsResponse } from '../models/event-model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventServiceService {
-  private readonly apiUrl = 'http://localhost:3000/events';
+  private readonly apiUrl =  environment.apiEventsUrl;
 
   constructor(
     private readonly http: HttpClient,
