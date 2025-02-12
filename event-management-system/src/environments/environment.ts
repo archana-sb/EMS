@@ -1,6 +1,5 @@
 export const environment = {
-    production: false,
-    apiUsersUrl: 'http://localhost:3000/users',
-    apiEventsUrl: 'http://localhost:3000/events'
-
-}
+  production: false,
+  apiUsersUrl: 'https://ems-m1cz.onrender.com/users',
+  apiEventsUrl: 'https://ems-m1cz.onrender.com/events',
+};
