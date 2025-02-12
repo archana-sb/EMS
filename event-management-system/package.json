@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "angular-cli-ghpages --dir=dist/event-management-system"
+    "deploy": "angular-cli-ghpages --dir=dist/event-management-system",
+    "json-server": "json-server --watch db.json --port 3000"
   },
   "private": true,
   "dependencies": {
