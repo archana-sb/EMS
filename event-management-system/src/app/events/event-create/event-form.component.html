@@ -1,0 +1,124 @@
+<div class="create-event">
+  <h2>
+    {{
+      mode == "edit"
+        ? "Edit Event"
+        : mode == "view"
+        ? "Event Details"
+        : "Create Event"
+    }}
+  </h2>
+  <form
+    [formGroup]="eventForm"
+    (ngSubmit)="onSubmit()"
+    fxLayout="column"
+    fxLayoutGap="16px"
+  >
+    <!-- Event Title -->
+    <mat-form-field
+      [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+      appearance="outline"
+      class="event-form__field"
+    >
+      <mat-label
+        [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        class="event-form__label"
+        >Event Title</mat-label
+      >
+      <input
+        [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        matInput
+        formControlName="title"
+        required
+      />
+      <mat-error
+        *ngIf="
+          eventForm.get('title')?.invalid && eventForm.get('title')?.touched
+        "
+      >
+        Title is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field
+      [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+      appearance="outline"
+      class="event-form__field"
+    >
+      <mat-label [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        >Event Date</mat-label
+      >
+      <input
+        [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        matInput
+        formControlName="date"
+        [matDatepicker]="picker"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error
+        *ngIf="eventForm.get('date')?.invalid && eventForm.get('date')?.touched"
+      >
+        Date is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="event-form__field">
+      <mat-label [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        >Event Location</mat-label
+      >
+      <input
+        [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        matInput
+        formControlName="location"
+        required
+      />
+      <mat-error
+        *ngIf="
+          eventForm.get('location')?.invalid &&
+          eventForm.get('location')?.touched
+        "
+      >
+        Location is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field
+      [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+      appearance="outline"
+      class="event-form__field"
+    >
+      <mat-label [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        >Event Description</mat-label
+      >
+      <textarea
+        [ngClass]="{ 'mdc-text-field-enabled': mode == 'view' }"
+        matInput
+        formControlName="description"
+        rows="4"
+        required
+        class="no-resize"
+      ></textarea>
+      <mat-error
+        *ngIf="
+          eventForm.get('description')?.invalid &&
+          eventForm.get('description')?.touched
+        "
+      >
+        Description is required
+      </mat-error>
+    </mat-form-field>
+
+    <div class="event-form__button-container" *ngIf="mode != 'view'">
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit"
+        [disabled]="eventForm.invalid"
+      >
+        {{ mode == "edit" ? "Save Changes" : "Create Event" }}
+      </button>
+    </div>
+  </form>
+</div>

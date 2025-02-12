@@ -1,44 +1,371 @@
 {
-  "events": [
-    {
-      "id": 1,
-      "title": "Angular Workshop",
-      "description": "A comprehensive workshop on Angular.",
-      "date": "2025-02-15",
-      "location": "New York, NY"
-    },
-    {
-      "id": 2,
-      "title": "React Training",
-      "description": "Learn the basics of React.",
-      "date": "2025-02-20",
-      "location": "Los Angeles, CA"
-    },
-    {
-      "id": 3,
-      "title": "Angular Workshop",
-      "description": "A comprehensive workshop on Angular.",
-      "date": "2025-02-15",
-      "location": "New York, NY"
-    },
-    {
-      "id": 4,
-      "title": "React Training",
-      "description": "Learn the basics of React.",
-      "date": "2025-02-20",
-      "location": "Los Angeles, CA"
-    }
-  ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "test1@example.com",
       "password": "123456"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "test2@example.com",
       "password": "123456"
+    },
+    {
+      "id": "d686",
+      "email": "test345@example.com",
+      "password": "hello"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Event 1",
+      "date": "2025-02-12T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 1"
+    },
+    {
+      "id": "2",
+      "title": "Event 2",
+      "date": "2025-02-13T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 2"
+    },
+    {
+      "id": "3",
+      "title": "Event 3",
+      "date": "2025-02-14T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 3"
+    },
+    {
+      "id": "4",
+      "title": "Event 4",
+      "date": "2025-02-15T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 4"
+    },
+    {
+      "id": "5",
+      "title": "Event 5",
+      "date": "2025-02-16T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 5"
+    },
+    {
+      "id": "6",
+      "title": "Event 6",
+      "date": "2025-02-17T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 6"
+    },
+    {
+      "id": "7",
+      "title": "Event 7",
+      "date": "2025-02-18T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 7"
+    },
+    {
+      "id": "8",
+      "title": "Event 8",
+      "date": "2025-02-19T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 8"
+    },
+    {
+      "id": "9",
+      "title": "Event 9",
+      "date": "2025-02-20T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 9"
+    },
+    {
+      "id": "10",
+      "title": "Event 10",
+      "date": "2025-02-21T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 10"
+    },
+    {
+      "id": "11",
+      "title": "Event 11",
+      "date": "2025-02-22T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 11"
+    },
+    {
+      "id": "12",
+      "title": "Event 12",
+      "date": "2025-02-23T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 12"
+    },
+    {
+      "id": "13",
+      "title": "Event 13",
+      "date": "2025-02-24T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 13"
+    },
+    {
+      "id": "14",
+      "title": "Event 14",
+      "date": "2025-02-25T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 14"
+    },
+    {
+      "id": "15",
+      "title": "Event 15",
+      "date": "2025-02-26T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 15"
+    },
+    {
+      "id": "16",
+      "title": "Event 16",
+      "date": "2025-02-27T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 16"
+    },
+    {
+      "id": "17",
+      "title": "Event 17",
+      "date": "2025-02-28T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 17"
+    },
+    {
+      "id": "18",
+      "title": "Event 18",
+      "date": "2025-03-01T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 18"
+    },
+    {
+      "id": "19",
+      "title": "Event 19",
+      "date": "2025-03-02T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 19"
+    },
+    {
+      "id": "20",
+      "title": "Event 20",
+      "date": "2025-03-03T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 20"
+    },
+    {
+      "id": "21",
+      "title": "Event 21",
+      "date": "2025-03-04T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 21"
+    },
+    {
+      "id": "22",
+      "title": "Event 22",
+      "date": "2025-03-05T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 22"
+    },
+    {
+      "id": "23",
+      "title": "Event 23",
+      "date": "2025-03-06T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 23"
+    },
+    {
+      "id": "24",
+      "title": "Event 24",
+      "date": "2025-03-07T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 24"
+    },
+    {
+      "id": "25",
+      "title": "Event 25",
+      "date": "2025-03-08T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 25"
+    },
+    {
+      "id": "26",
+      "title": "Event 26",
+      "date": "2025-03-09T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 26"
+    },
+    {
+      "id": "27",
+      "title": "Event 27",
+      "date": "2025-03-10T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 27"
+    },
+    {
+      "id": "28",
+      "title": "Event 28",
+      "date": "2025-03-11T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 28"
+    },
+    {
+      "id": "29",
+      "title": "Event 29",
+      "date": "2025-03-12T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 29"
+    },
+    {
+      "id": "30",
+      "title": "Event 30",
+      "date": "2025-03-13T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 30"
+    },
+    {
+      "id": "31",
+      "title": "Event 31",
+      "date": "2025-03-14T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 31"
+    },
+    {
+      "id": "32",
+      "title": "Event 32",
+      "date": "2025-03-15T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 32"
+    },
+    {
+      "id": "33",
+      "title": "Event 33",
+      "date": "2025-03-16T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 33"
+    },
+    {
+      "id": "34",
+      "title": "Event 34",
+      "date": "2025-03-17T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 34"
+    },
+    {
+      "id": "35",
+      "title": "Event 35",
+      "date": "2025-03-18T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 35"
+    },
+    {
+      "id": "36",
+      "title": "Event 36",
+      "date": "2025-03-19T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 36"
+    },
+    {
+      "id": "37",
+      "title": "Event 37",
+      "date": "2025-03-20T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 37"
+    },
+    {
+      "id": "38",
+      "title": "Event 38",
+      "date": "2025-03-21T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 38"
+    },
+    {
+      "id": "39",
+      "title": "Event 39",
+      "date": "2025-03-22T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 39"
+    },
+    {
+      "id": "40",
+      "title": "Event 40",
+      "date": "2025-03-23T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 40"
+    },
+    {
+      "id": "41",
+      "title": "Event 41",
+      "date": "2025-03-24T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 41"
+    },
+    {
+      "id": "42",
+      "title": "Event 42",
+      "date": "2025-03-25T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 42"
+    },
+    {
+      "id": "43",
+      "title": "Event 43",
+      "date": "2025-03-26T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 43"
+    },
+    {
+      "id": "44",
+      "title": "Event 44",
+      "date": "2025-03-27T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 44"
+    },
+    {
+      "id": "45",
+      "title": "Event 45",
+      "date": "2025-03-28T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 45"
+    },
+    {
+      "id": "46",
+      "title": "Event 46",
+      "date": "2025-03-29T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 46"
+    },
+    {
+      "id": "47",
+      "title": "Event 47",
+      "date": "2025-03-30T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 47"
+    },
+    {
+      "id": "48",
+      "title": "Event 48",
+      "date": "2025-03-31T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 48"
+    },
+    {
+      "id": "49",
+      "title": "Event 49",
+      "date": "2025-04-01T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 49"
+    },
+    {
+      "id": "50",
+      "title": "Event 50",
+      "date": "2025-04-02T18:30:00.000Z",
+      "location": "Mumbai",
+      "description": "Description for Event 50"
     }
   ]
 }

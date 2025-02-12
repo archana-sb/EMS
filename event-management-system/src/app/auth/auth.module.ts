@@ -9,15 +9,27 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth-guard.guard';
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('../events/events.module').then((m) => m.EventsModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'events',
+    loadChildren: () =>
+      import('../events/events.module').then((m) => m.EventsModule),
+    canActivate: [AuthGuard],
+  },
 ];
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
-    // AuthRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,

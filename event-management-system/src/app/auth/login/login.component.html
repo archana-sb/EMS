@@ -1,80 +1,71 @@
-<mat-card class="login-card">
-  <mat-card-title class="card-title">Login</mat-card-title>
-  <mat-card-content>
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-      <mat-form-field class="mb-2" appearance="outline">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          type="email"
-          name="email"
-          formControlName="email"
-          placeholder="pat@example.com"
-          required
-        />
-        <mat-error
-          *ngIf="
-            loginForm.controls['email']?.invalid &&
-            loginForm.controls['email']?.touched
-          "
-        >
-          Email is required
-        </mat-error>
-      </mat-form-field>
+<div class="d-flex h-100 justify-content-center align-items-center">
+  <mat-card class="text-center d-flex justify-content-center shadow rounded">
+    <mat-card-title class="mb-3">Sign in to our platform</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-form-field class="mb-2" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            name="email"
+            formControlName="email"
+            placeholder="pat@example.com"
+            required
+          />
+          <mat-error
+            *ngIf="
+              loginForm.controls['email']?.invalid &&
+              loginForm.controls['email']?.touched
+            "
+          >
+            Email is required
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Enter your password</mat-label>
-        <input
-          matInput
-          formControlName="password"
-          required
-          [type]="hide ? 'password' : 'text'"
-        />
-        <button
-          class="no-shadow"
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-        >
-          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
-        <mat-error
-          *ngIf="
-            loginForm.controls['password']?.invalid &&
-            loginForm.controls['password']?.touched
-          "
-        >
-          Password is required
-        </mat-error>
-      </mat-form-field>
-
-      <!-- <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" name="password" ngModel required>
-          <mat-error *ngIf="loginForm.controls['password']?.invalid && loginForm.controls['password']?.touched">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            formControlName="password"
+            required
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            class="no-shadow"
+            mat-icon-button
+            matSuffix
+            (click)="showPassword($event)"
+            [attr.aria-label]="'Hide password'"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="
+              loginForm.controls['password']?.invalid &&
+              loginForm.controls['password']?.touched
+            "
+          >
             Password is required
           </mat-error>
-        </mat-form-field> -->
+        </mat-form-field>
 
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        [disabled]="loginForm.invalid"
-      >
-        <mat-icon>login</mat-icon>
-        <!-- Add an icon -->
-        Login
-      </button>
+        <button
+          mat-raised-button
+          color="accent"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          <mat-icon>login</mat-icon>
+          Login to your account
+        </button>
 
-      <!-- Error Message -->
-      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 
-      <!-- Sign Up Link -->
-      <p class="signup-link mt-2">
-        Don't have an account? <a routerLink="/register">Sign up</a>
-      </p>
-    </form>
-  </mat-card-content>
-</mat-card>
+        <p class="signup-link mt-3">
+          Don't have an account? <a [routerLink]="['/register']">Sign up</a>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

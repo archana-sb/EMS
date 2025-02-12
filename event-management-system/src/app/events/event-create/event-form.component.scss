@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+.no-resize {
+  resize: none;
+}
+mat-form-field {
+  display: block;
+}
+.create-event {
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+}
+.event-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .create-event {
+    width: 55%;
+  }
+}
+
+.mdc-text-field-enabled {
+  color: #212121 !important;
+  opacity: 1 !important;
+}

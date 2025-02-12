@@ -1,32 +1,61 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { EventListComponent } from './event-list/event-list.component';
-import { EventCreateComponent } from './event-create/event-create.component';
-import { EventEditComponent } from './event-edit/event-edit.component';
-import { EventViewComponent } from './event-view/event-view.component';
+import { EventFormComponent } from './event-create/event-form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatGridListModule } from '@angular/material/grid-list';
 const routes: Routes = [
   {
-    path: '',
-    component: EventListComponent,
+    path: 'events',
+    component: NavbarComponent,
     children: [
       { path: '', component: EventListComponent },
-      { path: 'create-event', component: EventCreateComponent }, // Default to event list
-      { path: ':id/:name', component: EventViewComponent }, // Show event details
+      { path: 'create-new', component: EventFormComponent },
+      { path: ':mode/:id/:name', component: EventFormComponent },
     ],
   },
   { path: '**', redirectTo: 'events' },
-  // { path: 'create-event', component: EventCreateComponent },
-  // { path: ':id/:name', component: EventDetailsComponent },
 ];
 @NgModule({
-  declarations: [
-    EventListComponent,
-    EventCreateComponent,
-    EventEditComponent,
-    EventViewComponent,
+  declarations: [EventListComponent, EventFormComponent, NavbarComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatToolbarModule,
+    MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatListModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatGridListModule,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [DatePipe],
 })
 export class EventsModule {}

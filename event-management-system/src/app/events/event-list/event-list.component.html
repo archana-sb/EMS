@@ -1,1 +1,122 @@
-<p>event-list works!</p>
+<div *ngIf="loading" class="loading-container">
+  <mat-spinner color="primary"></mat-spinner>
+</div>
+
+<div class="container" [@fadeIn]>
+  <div *ngIf="events$ | async as response" class="container-fluid">
+    <table
+      class="table table-responsive row"
+      *ngIf="response && response.events.length > 0; else noRecords"
+    >
+      <tr class="row">
+        <th class="col-lg-1">ID</th>
+        <th class="col-lg-3">Title</th>
+
+        <th class="col-lg-2">Location</th>
+        <th class="col-lg-2">Date</th>
+
+        <th class="col-lg-1">View</th>
+        <th class="col-lg-1">Edit</th>
+        <th class="col-lg-1">Delete</th>
+      </tr>
+      <tr class="row" *ngFor="let event of response.events">
+        <td class="col-lg-1">{{ event.id }}</td>
+        <td class="col-lg-3">{{ event.title }}</td>
+
+        <td class="col-lg-2">{{ event.location }}</td>
+        <td class="col-lg-2">{{ event.date | date }}</td>
+
+        <td class="col-lg-1">
+          <a [routerLink]="['/events', 'view', event.id, slugify(event.title)]"
+            ><button type="button" class="p-0 btn">
+              <mat-icon color="primary">visibility icon</mat-icon>
+            </button></a
+          >
+        </td>
+        <td class="col-lg-1">
+          <a [routerLink]="['/events', 'edit', event.id, slugify(event.title)]"
+            ><button type="button" class="p-0 btn">
+              <mat-icon color="primary">edit</mat-icon>
+            </button></a
+          >
+        </td>
+        <td class="col-lg-1">
+          <button
+            type="button"
+            class="p-0 btn"
+            (click)="deleteEvent(event, 1, 100)"
+          >
+            <mat-icon color="warn">delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+    <mat-paginator
+      *ngIf="response.events.length"
+      [length]="100"
+      [pageSize]="100"
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>
+<ng-template #noRecords>
+  <div class="text-center mt-5">
+    <p class="no-records">⚠️ No records found.</p>
+    <button
+      mat-raised-button
+      color="accent"
+      routerLink="/events/create-new"
+      routerLinkActive="active-link"
+    >
+      <mat-icon>add_circle</mat-icon> Create Event
+    </button>
+  </div>
+</ng-template>
+
+<!-- for mobile -->
+<div class="event-container" *ngIf="events$ | async as response">
+  <ng-container *ngIf="response && response.events.length > 0; else noRecords">
+    <mat-card
+      *ngFor="let event of response.events; let i = index"
+      [ngClass]="{ 'alternate-bg': i % 2 !== 0 }"
+    >
+      <mat-card-content>
+        <h4>{{ event.date | date }}</h4>
+        <p class="event-title">{{ event.title }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          class="action-btn"
+          mat-icon-button
+          [routerLink]="['/events', 'view', event.id, slugify(event.title)]"
+        >
+          <mat-icon>visibility icon</mat-icon>View
+        </button>
+        <button
+          class="action-btn"
+          mat-icon-button
+          [routerLink]="['/events', 'edit', event.id, slugify(event.title)]"
+        >
+          <mat-icon>edit</mat-icon>Edit
+        </button>
+
+        <button
+          class="action-btn"
+          mat-icon-button
+          (click)="deleteEvent(event, 1, 100)"
+        >
+          <mat-icon>delete</mat-icon>Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-paginator
+      *ngIf="response.events.length"
+      [length]="response.total"
+      [pageSize]="100"
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  </ng-container>
+</div>
