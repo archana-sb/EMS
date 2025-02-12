@@ -9,6 +9,7 @@ EMS is a single-page application(SPA) for managing events.This applications allo
 - [Usage](#usage)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
 
 
 ## Installation
@@ -41,6 +42,18 @@ Once the application is running, you can:
 - Bootstrap
 - RxJS
 - Angular Material
+
+
+## Project Structure
+- App Module : This module is the root module of this application.
+- Auth Module : This module contains components for login and registration, route gaurd to protect routes, auth service for authentication.
+- Events Module : This module contains components for event-list, event-form(for create, edit and view), event service for crud operations.
+- JSON Server : Uses db.json to mock backend
+- Utility Folder: Contains reusable utility functions
+- Shared Folder: Contains reusable animations
+- Pipes Folder: Contains reusable pipes
+- Model folder: Contains interfaces used in this application
+
 
 ## Development server
 
