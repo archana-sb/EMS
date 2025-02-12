@@ -1,6 +1,5 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { AuthServiceService } from '../../auth/auth-service.service';
 
@@ -16,12 +15,11 @@ export class NavbarComponent implements OnDestroy {
   isMobile = false;
 
   constructor(
-    private readonly router: Router,
     private readonly media: MediaMatcher,
     private readonly formBuilder: FormBuilder,
     private readonly authService: AuthServiceService
   ) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this.mobileQuery = this.media.matchMedia('(max-width: 768px)');
     this.isMobile = this.mobileQuery.matches;
     this.mobileQueryListener = () => (this.isMobile = this.mobileQuery.matches);
     this.mobileQuery.addEventListener('change', this.mobileQueryListener);

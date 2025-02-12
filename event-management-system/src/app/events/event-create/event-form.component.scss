@@ -2,29 +2,33 @@
   display: flex;
   justify-content: center;
 }
+
 .no-resize {
   resize: none;
 }
+
 mat-form-field {
   display: block;
 }
+
 .create-event {
-  padding: 2rem;
-  width: 100%;
+  padding: 2rem; 
+  width: 100%; 
   text-align: center;
 }
+
 .event-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  padding: 20px;
+  height: 100%; 
+  padding: 1.25rem; 
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) { 
   .create-event {
-    width: 55%;
+    width: 55%; 
   }
 }
 
