@@ -27,14 +27,14 @@
         <td class="col-lg-2">{{ event.date | date }}</td>
 
         <td class="col-lg-1">
-          <a [routerLink]="['/events', 'view', event.id, slugify(event.title)]"
+          <a class="bg-light" [routerLink]="['/events', 'view', event.id, slugify(event.title)]"
             ><button type="button" class="p-0 btn">
               <mat-icon color="primary">visibility icon</mat-icon>
             </button></a
           >
         </td>
         <td class="col-lg-1">
-          <a [routerLink]="['/events', 'edit', event.id, slugify(event.title)]"
+          <a class="bg-light" [routerLink]="['/events', 'edit', event.id, slugify(event.title)]"
             ><button type="button" class="p-0 btn">
               <mat-icon color="primary">edit</mat-icon>
             </button></a
@@ -43,7 +43,7 @@
         <td class="col-lg-1">
           <button
             type="button"
-            class="p-0 btn"
+            class="p-0 btn bg-light"
             (click)="deleteEvent(event, 1, 100)"
           >
             <mat-icon color="warn">delete</mat-icon>
