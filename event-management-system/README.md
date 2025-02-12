@@ -1,6 +1,46 @@
-# EventManagementSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+# EventManagementSystem(EMS)
+
+EMS is a single-page application(SPA) for managing events.This applications allows users to create, view, edit and delete events. Each event has a title, description, date and location. This application also supports user authentication(registration and login) and is responsive.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+
+
+## Installation
+
+Clone the repository : https://github.com/archana-sb/Event.git
+Navigate to the project directory : cd event-management-system
+Install the dependencies : npm install
+Start the development server : ng serve
+Open your browser and navigate to `http://localhost:4200/`
+
+## Usage
+
+Once the application is running, you can:
+- View events
+- Edit existing events
+- Delete events
+- Add new events
+
+## Features
+
+- User authentication
+- Responsive design
+- View, Add, Delete, Edit events
+- Local storage & db.json for event persistence
+
+## Technologies Used
+
+- Angular
+- TypeScript
+- Bootstrap
+- RxJS
+- Angular Material
 
 ## Development server
 
@@ -25,3 +65,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+
+
