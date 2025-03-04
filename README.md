@@ -1,5 +1,5 @@
 
-# EventManagementSystem(EMS)
+# EventManagementSystem(EMS) live Demo: https://archana-sb.github.io/EMS
 
 EMS is a single-page application(SPA) for managing events.This applications allows users to create, view, edit and delete events. Each event has a title, description, date and location. This application also supports user authentication(registration and login) and is responsive.
 
