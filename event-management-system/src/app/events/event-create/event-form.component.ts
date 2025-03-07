@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, filter, map, tap } from 'rxjs';
-import { EventServiceService } from '../event-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { fadeInAnimation, slideInAnimation } from '../../shared/animations';
+import { IEventService } from '../events-services.interface';
+import { ToastService } from '../../shared/toast.service';
 
 @Component({
   selector: 'app-event-form',
@@ -20,8 +21,8 @@ export class EventFormComponent {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly fb: FormBuilder,
-    private readonly eventService: EventServiceService,
-    private readonly snackBar: MatSnackBar
+    private readonly eventService: IEventService,
+    private readonly toastService:ToastService,
   ) {
     this.eventForm = this.fb.group({
       title: ['', Validators.required],
@@ -55,7 +56,7 @@ export class EventFormComponent {
 
   onSubmit(): void {
     if (this.eventForm.invalid) {
-      this.showErrorMessage('Event Form Invalid. Try again!');
+      this.toastService.showErrorMessage('Event Form Invalid. Try again!');
       return;
     }
     const serviceCall =
@@ -71,17 +72,15 @@ export class EventFormComponent {
     }
   }
 
-  showSuccessMessage(message: string): void {
-    this.snackBar.open(message, 'OK', {
-      duration: 3000,
-      panelClass: ['success-snackbar'],
-    });
+    // Expose form validity for testing
+    isFormValid(): boolean {
+      return this.eventForm.valid;
+    }
+
+      // Expose form values for testing
+  getFormValues(): any {
+    return this.eventForm.getRawValue();
   }
 
-  showErrorMessage(message: string): void {
-    this.snackBar.open(message, 'Close', {
-      duration: 3000,
-      panelClass: ['error-snackbar'],
-    });
-  }
+
 }

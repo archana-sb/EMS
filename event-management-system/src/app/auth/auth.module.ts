@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -10,6 +10,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard.guard';
+import { AuthServiceService } from './auth-service.service';
+import { environment } from '../../environments/environment';
+import { ToastService } from '../shared/toast.service';
+import { Auth_Service_Token } from '../shared/tokens';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -41,5 +45,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   exports: [RouterModule],
+  providers:[{provide: Auth_Service_Token, useClass: AuthServiceService}, {provide: 'USER_API_URL', useValue: environment.apiUsersUrl}, ToastService]
 })
 export class AuthModule {}

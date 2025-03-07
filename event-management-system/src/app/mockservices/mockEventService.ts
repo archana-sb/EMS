@@ -11,10 +11,7 @@ export const mockEvent1 =  { id: '1', title: 'Event 1', date: '2023-01-01', loca
 
 
 export class MockEventService implements IEventService{
-    private readonly events: Event[] = [
-        { id: '1', title: 'Event 1', date: '2023-01-01', location: 'Location 1', description: 'Description 1' },
-        { id: '2', title: 'Event 2', date: '2023-01-02', location: 'Location 2', description: 'Description 2' }
-    ];
+    private readonly events = mockEventsArray;
     getEvent(id: string): Observable<Event> {
         return of({id:'123', title: 'Mock Event', date: '2023-01-01', location: 'Mock Location', description: 'Mock Description' });
     }
